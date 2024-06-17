@@ -11,3 +11,5 @@
 ## Use cases
 
 - When you are collaborating with people. 
+- Paper trail.
+    - Remind you of what are you working on.
