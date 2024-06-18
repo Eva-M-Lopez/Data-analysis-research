@@ -41,4 +41,32 @@ with open("test.txt", "r") as file:
 import numpy as np
 
 array = np.array([1,2,3])
+#has to be all the same type - can not really supposed to
 print(array)
+print(np.sum(array))
+print(array)
+my_num = np.sum(array)
+print(my_num)
+
+#Try except
+try:
+    print(2/0)
+except ZeroDivisionError:
+    print("try again ;)")
+
+#Bring it all together
+#create a function where you write a set of numbers,
+
+#if statements
+my_val = 2
+if my_val % 2 == 0:
+    print("this is even")
+elif my_val % 2 != 0:
+    print("this is not even")
+
+
+#input from user
+my_input = input("input_value: ")
+my_counter = 0
+my_counter += 1
+
