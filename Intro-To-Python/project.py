@@ -55,11 +55,11 @@ min_finder(tl)
 max_finder(hl)
 min_finder(hl)
     
-def main():
-    print("test")
+# def main():
+#     print("test")
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
 
 
 
