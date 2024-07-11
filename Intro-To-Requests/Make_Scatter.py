@@ -1,10 +1,4 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression, LogisticRegression
-from sklearn.metrics import confusion_matrix, mean_squared_error
-from sklearn.metrics import classification_report
-from sklearn.metrics import accuracy_score
-from sklearn.preprocessing import OneHotEncoder
 import matplotlib.pyplot as plt
 
 # Load your dataset
@@ -27,44 +21,20 @@ percentage_df = filtered_df[[
     "United States!!Percent below poverty level!!Estimate", 
 ]]
 
-percentage_df.to_csv('test6.csv')
-
-
 percentage_df.loc[:, "United States!!Percent below poverty level!!Estimate"] = (
     percentage_df["United States!!Percent below poverty level!!Estimate"]
     .str.replace('%', '')
     .astype(float)
 )
 
-
-X = percentage_df[['Label (Grouping)']]  # Assuming these are categorical features
+X = percentage_df['Label (Grouping)']  # Assuming these are categorical features
 y = percentage_df['United States!!Percent below poverty level!!Estimate']
 
-X.to_csv('test3.csv')
-y.to_csv('test7.csv')
-
-
-encoder = OneHotEncoder()
-X_encoded = encoder.fit_transform(X)
-
-# y.to_csv('test2.csv')
-
-
-
-X_train, X_test, y_train, y_test = train_test_split(X_encoded, y, test_size=0.2, random_state=42)
-
-# # Initialize and fit the model (e.g., Linear Regression)
-model = LinearRegression()
-model.fit(X_train, y_train)
-
-y_pred = model.predict(X_test)
-
-# Evaluate
-mse = mean_squared_error(y_test, y_pred)
-r2 = model.score(X_test, y_test)
-
-print(f"Mean Squared Error: {mse}")
-print(f"R-squared: {r2}")
-
-
-
+plt.figure(figsize=(12, 6))
+plt.scatter(X, y, alpha=0.5)
+plt.title('Percentage Below Poverty Level by Category')
+plt.xlabel('Category')
+plt.ylabel('Percentage Below Poverty Level')
+plt.xticks(rotation=90)  # Rotate x-axis labels for better readability if necessary
+plt.tight_layout()
+plt.show()
