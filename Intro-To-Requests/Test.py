@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn.metrics import confusion_matrix, mean_squared_error
 from sklearn.metrics import classification_report
-from sklearn.base import accuracy_score
+from sklearn.metrics import accuracy_score
 
 # Load your dataset
 df = pd.read_csv("Intro-To-Requests/American_Census_data.csv")
@@ -38,6 +38,7 @@ y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 cm = confusion_matrix(y_test, y_pred)
 report = classification_report(y_test, y_pred)
+
 
 print("Accuracy:", accuracy)
 print("Confusion Matrix:\n", cm)
