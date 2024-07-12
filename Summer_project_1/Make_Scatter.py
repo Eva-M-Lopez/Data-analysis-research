@@ -2,15 +2,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load your dataset
-df = pd.read_csv("Intro-To-Requests/American_Census_data.csv")
+df = pd.read_csv("Summer_project_1/American_Census_data.csv")
 
 characteristics = [
     '18 to 64 years', '65 years and over', 'Under 5 years', 
-    '5 to 17 years','White alone','Black or African American alone',
-    'American Indian and Alaska Native alone','Asian alone',
-    'Native Hawaiian and Other Pacific Islander alone','Some other race alone',
-    'Two or more races','Hispanic or Latino origin (of any race)',
-    'White alone, not Hispanic or Latino','graduate', 'degree','Employed', 'Unemployed'
+    '5 to 17 years'
 ]
 
 pattern = '|'.join(characteristics)
